@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Miika Hänninen"
 author = "Miika Hänninen"
 
-theme = "hugo-goa"
+# theme = "hugo-goa"
 
 [params]
 author = "Miika Hänninen"
