@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,500|Roboto:300,400&display=swap" rel="stylesheet">
+    <title>
+      {{ block "title" . }}
+      {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} {{ if eq $url "" }} {{ .Site.Title }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
+      {{ end }}
+    </title>
+    <script type="application/ld+json">
+      {{ block "json-ld" . }}
+      {{ end }}
+    </script>
+    <style>
+      {{ block "extra_style" . }}
+      {{ end }}
+    </style>
+    <base href="{{ .Site.BaseURL }}">
+  </head>
+  <body>
+    {{ block "main" . }}
+    {{ end }}
+  </body>
+</html>
