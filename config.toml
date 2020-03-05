@@ -2,5 +2,6 @@ baseURL = "https://miikahanninen.com/"
 languageCode = "en-us"
 title = "Miika Hänninen"
 author = "Miika Hänninen"
+enableRobotsTXT = true
 
 [taxonomies]
