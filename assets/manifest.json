@@ -1,0 +1,29 @@
+{{ $favicon114 := resources.Get "assets/favicon_114.png" | fingerprint }}
+{{ $favicon128 := resources.Get "assets/favicon_128.png" | fingerprint }}
+{{ $favicon144 := resources.Get "assets/favicon_144.png" | fingerprint }}
+{{ $favicon152 := resources.Get "assets/favicon_152.png" | fingerprint }}
+{{ $favicon180 := resources.Get "assets/favicon_180.png" | fingerprint }}
+{{ $favicon192 := resources.Get "assets/favicon_192.png" | fingerprint }}
+{{ $favicon32 := resources.Get "assets/favicon_32.png" | fingerprint }}
+{{ $favicon57 := resources.Get "assets/favicon_57.png" | fingerprint }}
+{{ $favicon64 := resources.Get "assets/favicon_64.png" | fingerprint }}
+{{ $favicon72 := resources.Get "assets/favicon_72.png" | fingerprint }}
+{{ $favicon76 := resources.Get "assets/favicon_76.png" | fingerprint }}
+{
+  "name": "Miika Hänninen",
+  "description": "A Senior Software Developer working for Reaktor in Helsinki",
+  "icons": [
+    { "type": "image/png", "sizes":"152x152", src:"{{ $favicon152.Permalink }}" },
+    { "type": "image/png", "sizes":"144x144", src:"{{ $favicon144.Permalink }}" },
+    { "type": "image/png", "sizes":"76x76", src:"{{ $favicon76.Permalink }}" },
+    { "type": "image/png", "sizes":"72x72", src:"{{ $favicon72.Permalink }}" },
+    { "type": "image/png", "sizes":"180x180", src:"{{ $favicon180.Permalink }}" },
+    { "type": "image/png", "sizes":"114x114", src:"{{ $favicon114.Permalink }}" },
+    { "type": "image/png", "sizes":"57x57", src:"{{ $favicon57.Permalink }}" },
+    {"type": "image/png", "sizes":"192x192", src:"{{ $favicon192.Permalink }}" },
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "theme_color": "#8b8b8b",
+  "scope": "/"
+}

@@ -9,6 +9,7 @@
 {{ $favicon76 := resources.Get "assets/favicon_76.png" | fingerprint }}
 {{ $favicon72 := resources.Get "assets/favicon_72.png" | fingerprint }}
 {{ $favicon57 := resources.Get "assets/favicon_57.png" | fingerprint }}
+{{ $manifest := resources.Get "manifest.json" }}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile">
@@ -37,6 +38,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ $favicon57.Permalink }}" />
     <link rel="icon" sizes="192x192" href="{{ $favicon192.Permalink }}" />
     <meta name="theme-color" content="#8b8b8b" />
+    <link rel="manifest" href="{{ $manifest.Permalink }}" />
   </head>
   <body>
     {{ block "main" . }}
