@@ -12,14 +12,10 @@
       {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} {{ if eq $url "" }} {{ .Site.Title }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
       {{ end }}
     </title>
-    <script type="application/ld+json">
-      {{ block "json-ld" . }}
-      {{ end }}
-    </script>
-    <style>
-      {{ block "extra_style" . }}
-      {{ end }}
-    </style>
+    {{ block "metadata" . }}
+    {{ end }}
+    {{ $style := resources.Get "assets/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
     <base href="{{ .Site.BaseURL }}">
   </head>
   <body>
