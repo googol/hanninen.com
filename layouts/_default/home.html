@@ -1,7 +1,9 @@
 {{ define "main" }}
+{{ $headshot := resources.Get "assets/img/googol.jpg" | fingerprint }}
+{{ $icons := resources.Get "assets/icons.svg" | fingerprint }}
 <main>
   <header class="front-page-header centered">
-    <img class="headshot" src="/img/googol.jpg" alt=""/>
+    <img class="headshot" src="{{ $headshot.Permalink }}" alt=""/>
     <h1>Miika Hänninen</h1>
   </header>
   <section class="centered">
@@ -10,21 +12,22 @@
   </section>
   <section class="centered">
     <ul class="links-list">
-      <li><a class="icon-link" href="https://github.com/googol"><svg class="icon"><use xlink:href="/icons.svg#icon-github"></use></svg></a></li>
-      <li><a class="icon-link" href="https://linkedin.com/in/miikahanninen"><svg class="icon"><use xlink:href="/icons.svg#icon-linkedin"></use></svg></a></li>
-      <li><a class="icon-link" href="https://gitlab.com/googol_r"><svg class="icon"><use xlink:href="/icons.svg#icon-gitlab"></use></svg></a></li>
-      <li><a class="icon-link" href="mailto:miika@miikahanninen.com"><svg class="icon"><use xlink:href="/icons.svg#icon-email"></use></svg></a></li>
+      <li><a class="icon-link" href="https://github.com/googol"><svg class="icon"><use xlink:href="{{ $icons.Permalink }}#icon-github"></use></svg></a></li>
+      <li><a class="icon-link" href="https://linkedin.com/in/miikahanninen"><svg class="icon"><use xlink:href="{{ $icons.Permalink }}#icon-linkedin"></use></svg></a></li>
+      <li><a class="icon-link" href="https://gitlab.com/googol_r"><svg class="icon"><use xlink:href="{{ $icons.Permalink }}#icon-gitlab"></use></svg></a></li>
+      <li><a class="icon-link" href="mailto:miika@miikahanninen.com"><svg class="icon"><use xlink:href="{{ $icons.Permalink }}#icon-email"></use></svg></a></li>
     </ul>
   </section>
 </main>
 {{ end }}
 {{ define "metadata" }}
+{{ $headshot := resources.Get "assets/img/googol.jpg" | fingerprint }}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Person",
   "email": "mailto:miika@miikahanninen.com",
-  "image": "{{ "/img/googol.jpg" | absURL }}",
+  "image": "{{ $headshot.Permalink }}",
   "jobTitle": "Senior Software Developer",
   "name": "Miika Hänninen",
   "url": "https://miikahanninen.com"
