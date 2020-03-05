@@ -3,16 +3,3 @@ languageCode = "en-us"
 title = "Miika Hänninen"
 author = "Miika Hänninen"
 
-# theme = "hugo-goa"
-
-[params]
-author = "Miika Hänninen"
-intro = "Señor Software Developer"
-description = "Consulting in all things software development @ Reaktor"
-authorimage = "googol.jpg"
-
-[params.social]
-github = "googol"
-linkedin = "miikahanninen"
-gitlab = "googol_r"
-email = "miika@miikahanninen.com"
