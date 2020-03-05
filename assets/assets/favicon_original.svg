@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   viewBox="0 0 67.733332 67.733335"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="favicon_original.svg"
+   inkscape:export-filename="/home/googol/src/hanninen.com/assets/assets/favicon_192.png"
+   inkscape:export-xdpi="72.000008"
+   inkscape:export-ydpi="72.000008">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="140.32851"
+     inkscape:cy="148.73982"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     guidetolerance="10000"
+     inkscape:window-width="3840"
+     inkscape:window-height="2130"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="59.531249,59.531251"
+       orientation="0,1"
+       id="guide4563"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="58.7375,8.4666667"
+       orientation="0,1"
+       id="guide4565"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.266667,4.7625"
+       orientation="1,0"
+       id="guide4567"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.4666665,6.0854168"
+       orientation="1,0"
+       id="guide4569"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-229.26665)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="rect847"
+       width="67.73333"
+       height="67.73333"
+       x="0"
+       y="229.26665" />
+    <g
+       aria-label="M"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#8b8b8b;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text817"
+       transform="matrix(1.1415831,0,0,1.1415831,-1.2477156,-28.481408)">
+      <path
+         d="m 8.5095709,273.59293 v -3.12539 L 12.552735,269.773 V 241.32203 L 8.5095709,240.6275 v -3.1502 H 19.076368 l 11.633398,27.40918 h 0.148828 L 42.119922,237.4773 H 53.00918 v 3.1502 l -4.043164,0.69453 V 269.773 l 4.043164,0.69454 v 3.12539 H 40.036328 v -3.12539 l 4.266406,-0.69454 v -25.62324 l -0.124023,-0.0248 -11.732617,28.17812 H 29.19668 l -12.129492,-28.12851 -0.124023,0.0248 0.173632,15.10606 V 269.773 l 4.365625,0.69454 v 3.12539 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.79999924px;font-family:'Roboto Slab';-inkscape-font-specification:'Roboto Slab';stroke-width:0.26458332;fill:#8b8b8b;fill-opacity:1"
+         id="path4571"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

@@ -1,12 +1,23 @@
+{{ $favicon192 := resources.Get "assets/favicon_192.png" | fingerprint }}
+{{ $favicon128 := resources.Get "assets/favicon_128.png" | fingerprint }}
+{{ $favicon152 := resources.Get "assets/favicon_152.png" | fingerprint }}
+{{ $favicon144 := resources.Get "assets/favicon_144.png" | fingerprint }}
+{{ $favicon180 := resources.Get "assets/favicon_180.png" | fingerprint }}
+{{ $favicon114 := resources.Get "assets/favicon_114.png" | fingerprint }}
+{{ $favicon32 := resources.Get "assets/favicon_32.png" | fingerprint }}
+{{ $favicon64 := resources.Get "assets/favicon_64.png" | fingerprint }}
+{{ $favicon76 := resources.Get "assets/favicon_76.png" | fingerprint }}
+{{ $favicon72 := resources.Get "assets/favicon_72.png" | fingerprint }}
+{{ $favicon57 := resources.Get "assets/favicon_57.png" | fingerprint }}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,500|Roboto:300,400&display=swap" rel="stylesheet">
+    <meta name="format-detection" content="telephone=no">
     <title>
       {{ block "title" . }}
       {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} {{ if eq $url "" }} {{ .Site.Title }} {{ else }} {{ .Site.Title }} - {{ .Title }} {{ end }}
@@ -17,6 +28,15 @@
     {{ $style := resources.Get "assets/style.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
     <base href="{{ .Site.BaseURL }}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ $favicon152.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ $favicon144.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ $favicon76.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ $favicon72.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="{{ $favicon180.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ $favicon114.Permalink }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ $favicon57.Permalink }}" />
+    <link rel="icon" sizes="192x192" href="{{ $favicon192.Permalink }}" />
+    <meta name="theme-color" content="#8b8b8b" />
   </head>
   <body>
     {{ block "main" . }}
