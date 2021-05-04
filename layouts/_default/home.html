@@ -1,9 +1,13 @@
 {{ define "main" }}
-{{ $headshot := resources.Get "assets/img/googol.jpg" | fingerprint }}
+{{ $headshot_jpg := resources.Get "assets/img/googol.jpg" | fingerprint }}
+{{ $headshot_webp := resources.Get "assets/img/googol.webp" | fingerprint }}
 {{ $icons := resources.Get "assets/icons.svg" | fingerprint }}
 <main>
   <header class="front-page-header centered">
-    <img class="headshot" src="{{ $headshot.Permalink }}" alt=""/>
+    <picture>
+      <source type="image/webp" srcset="{{ $headshot_webp.Permalink }}" />
+      <img class="headshot" src="{{ $headshot_jpg.Permalink }}" alt=""/>
+    </picture>
     <h1>Miika Hänninen</h1>
   </header>
   <section class="centered">
