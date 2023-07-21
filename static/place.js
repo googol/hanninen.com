@@ -1,7 +1,24 @@
 const script = document.createElement('script')
 const code = `
+`
 const xLimits = [0, 1499]
 const yLimits = [0, 999]
+const colors = {
+  RED: 2,
+  ORANGE: 3,
+  YELLOW: 4,
+  GREEN: 6,
+  BLUE: 13,
+  PURPLE: 19,
+  BLACK: 27,
+  WHITE: 31,
+}
+const directions = {
+  UP: 0,
+  RIGHT: 1,
+  DOWN: 2,
+  LEFT: 3,
+}
 
 const embed = document.querySelector('garlic-bread-embed')
 
@@ -13,15 +30,15 @@ const initialState = {
   pixel: {
     x: 1275, y: 242
   },
-  direction: 1, // right
+  direction: directions.RIGHT,
 }
 
 let currentState = initialState
 
-const mutationObserver = new MutationObserver((records, observer) => {
+const mutationObserver = new MutationObserver(() => {
   if (statusPill.getAttribute('next-tile-available-in') === '0') {
     embed.selectPixel(currentState.pixel)
-    colorPicker.selectColor(19)
+    colorPicker.selectColor(colors.PURPLE)
     colorPicker.confirmPixel()
     currentState = chooseNextState(currentState)
     console.log('sent pixel')
@@ -33,31 +50,30 @@ const mutationObserver = new MutationObserver((records, observer) => {
 mutationObserver.observe(statusPill, { attributes: true })
 
 function chooseNextState(currentState) {
-  const pixel = calculateNextPixel(currentState.pixel, currentState.direction)
   return {
-    pixel,
-    direction: calculateNextDirection(direction, pixel),
+    pixel: calculateNextPixel(currentState.pixel, currentState.direction),
+    direction: calculateNextDirection(currentState.direction),
   }
 }
 
 function calculateNextPixel(pixel, direction) {
   switch (direction) {
-    case 0: // up
+    case directions.UP:
       return {
         x: clampX(pixel.x - 1),
         y: clampY(pixel.y),
       }
-    case 1: // right
+    case directions.RIGHT:
       return {
         x: clampX(pixel.x),
         y: clampY(pixel.y + 1),
       }
-    case 2: // down
+    case directions.DOWN:
       return {
         x: clampX(pixel.x + 1),
         y: clampY(pixel.y),
       }
-    case 3: // left
+    case directions.LEFT:
       return {
         x: clampX(pixel.x),
         y: clampY(pixel.y - 1),
@@ -65,7 +81,7 @@ function calculateNextPixel(pixel, direction) {
   }
 }
 
-function calculateNextDirection(currentDirection, nextPixel) {
+function calculateNextDirection(currentDirection) {
   const direction = [-1, 0, 1][Math.floor(Math.random() * 4)]
 
   const newDirection = currentDirection + direction
@@ -89,7 +105,6 @@ function clampY(y) {
 }
 
 console.log(embed, canvas, statusPill, colorPicker)
-`
 
 script.appendChild(document.createTextNode(code))
 document.head.appendChild(script)
