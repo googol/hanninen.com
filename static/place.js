@@ -21,7 +21,7 @@ let currentState = initialState
 const mutationObserver = new MutationObserver((records, observer) => {
   if (statusPill.getAttribute('next-tile-available-in') === '0') {
     embed.selectPixel(currentState.pixel)
-    colorPicker.selectColor(31)
+    colorPicker.selectColor(19)
     colorPicker.confirmPixel()
     currentState = chooseNextState(currentState)
     console.log('sent pixel')
