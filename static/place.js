@@ -27,7 +27,7 @@ const colorPicker = document.querySelector('garlic-bread-embed').shadowRoot.quer
 
 const initialState = {
   pixel: {
-    x: 1275, y: 242
+    x: 1224, y: 807
   },
   direction: directions.RIGHT,
 }
@@ -35,18 +35,24 @@ const initialState = {
 let currentState = initialState
 
 const mutationObserver = new MutationObserver(() => {
-  if (statusPill.getAttribute('next-tile-available-in') === '0') {
-    embed.selectPixel(currentState.pixel)
-    colorPicker.selectColor(colors.PURPLE)
-    colorPicker.confirmPixel()
-    currentState = chooseNextState(currentState)
-    console.log('sent pixel')
-  } else {
-    console.log('Not ready yet')
-  }
+  sendPixel()
 })
 
 mutationObserver.observe(statusPill, { attributes: true })
+
+sendPixel()
+
+function sendPixel() {
+  if (statusPill.getAttribute('next-tile-available-in') === '0') {
+    const color = colors.PURPLE
+    embed.selectPixel(currentState.pixel)
+    colorPicker.selectColor(color)
+    colorPicker.confirmPixel()
+    const nextState = chooseNextState(currentState)
+    console.log('sent pixel', { currentState, nextState, color })
+    currentState = nextState
+  }
+}
 
 function chooseNextState(currentState) {
   return {
@@ -102,8 +108,6 @@ function clampX(x) {
 function clampY(y) {
   return clamp(y, yLimits[0], yLimits[1])
 }
-
-console.log(embed, canvas, statusPill, colorPicker)
 `
 
 script.appendChild(document.createTextNode(code))
