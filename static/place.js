@@ -1,6 +1,5 @@
 const script = document.createElement('script')
 const code = `
-`
 const xLimits = [0, 1499]
 const yLimits = [0, 999]
 const colors = {
@@ -105,6 +104,7 @@ function clampY(y) {
 }
 
 console.log(embed, canvas, statusPill, colorPicker)
+`
 
 script.appendChild(document.createTextNode(code))
 document.head.appendChild(script)
