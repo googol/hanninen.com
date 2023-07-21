@@ -27,7 +27,7 @@ const colorPicker = document.querySelector('garlic-bread-embed').shadowRoot.quer
 
 const initialState = {
   pixel: {
-    x: 1224, y: 807
+    x: 1225, y: 808
   },
   direction: directions.RIGHT,
 }
@@ -51,6 +51,7 @@ function sendPixel() {
     const nextState = chooseNextState(currentState)
     console.log('sent pixel', { currentState, nextState, color })
     currentState = nextState
+    embed.selectPixel(nextState.pixel)
   }
 }
 
