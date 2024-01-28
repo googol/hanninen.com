@@ -26,13 +26,12 @@
 </main>
 {{ end }}
 {{ define "metadata" }}
-{{ $headshot := resources.Get "assets/img/googol.jpg" | fingerprint }}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Person",
   "email": "mailto:miika@miikahanninen.com",
-  "image": "{{ $headshot.Permalink }}",
+  "image": "{{ $headshot_jpg.Permalink }}",
   "jobTitle": "Lead Software Developer",
   "name": "Miika Hänninen",
   "url": "https://miikahanninen.com"
@@ -43,7 +42,7 @@
 <meta property="og:type" content="profile" />
 <meta property="profile:first_name" content="Miika" />
 <meta property="profile:last_name" content="Hänninen" />
-<meta property="og:image" content="{{ $headshot.Permalink }}" />
+<meta property="og:image" content="{{ $headshot_jpg.Permalink }}" />
 <meta property="og:image:alt" content="A photo of Miika Hänninen" />
 <meta property="og:description" content="Miika Hänninen is a lead software developer at RELEX in Helsinki" />
 <meta property="og:url" content="{{ .Permalink }}" />
