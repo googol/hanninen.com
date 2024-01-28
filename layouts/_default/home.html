@@ -26,6 +26,7 @@
 </main>
 {{ end }}
 {{ define "metadata" }}
+{{ $headshot_jpg := resources.Get "assets/img/googol.jpg" | fingerprint }}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
